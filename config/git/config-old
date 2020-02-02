@@ -1,0 +1,218 @@
+# vim: ft=gitconfig
+[user]
+	name = Daniel Hahler
+	email = git@thequod.de
+[init]
+	templatedir = ~/.config/git/template
+[alias]
+	# NOTE: I am using full aliases for most of this, e.g. "ga" for "git add".
+	amend = commit --amend -v
+	# use "aliases" instead of "alias", which is used by hub; ref: https://github.com/defunkt/hub/issues/303
+	aliases = !git config --get-regexp '^alias\\.' | sed -e 's/^alias\\.//' -e 's/ /	/' | sort
+	cp = cherry-pick
+	dd = !git difftool --no-prompt --tool=my-icdiff
+	dsf = !git diff --color $@ | diff-so-fancy
+	desc = describe --all --always
+	dv = !git diff -w "$@" | vim -R -
+	f = fetch
+	# Used (verbatim/resolved) for internal dirty status in shell theme (✗).
+	ls-untracked = ls-files --other --directory --exclude-standard
+	m = merge
+	mf = merge --ff-only
+	ma = merge --abort
+	mm = merge --no-edit
+	mmm = merge -X theirs --no-edit
+	# preview/temp merge
+	mp = merge --no-commit
+	rb = rebase -i @{u}
+	rba = rebase --abort
+	rbc = rebase --continue
+	rbi = rebase --interactive
+	rbs = rebase --skip
+	rl = reflog @{now}
+	rlf = reflog --pretty=reflog
+	s = status
+	st = status
+	sm = submodule
+	sta = stash --keep-index
+	sts = stash show -p
+	stp = stash pop
+	stl = stash list --format=\"%gd: %ci - %gs\"
+	up = !git fetch && git rebase
+	showtrackedignored = ! cd \"${GIT_PREFIX}\" && untracked_list=$(git rev-parse --git-dir)/ignored-untracked.txt && git ls-files -o -i --exclude-standard >\"${untracked_list}\" && GIT_INDEX_FILE=\"\" git ls-files -o -i --exclude-standard | grep -Fvxf \"${untracked_list}\" && rm -rf \"${untracked_list}\"
+	# Diff stash with working tree.
+	# This is used to decide, if a stash can be savely dropped.
+	stash-diff = !zsh -c 'bcompare =(git stash show -p --no-prefix) =(git diff --no-prefix)'
+	cfg = !$EDITOR $(readlink -f ~/.gitconfig)
+	# Based on http://haacked.com/archive/2014/07/28/github-flow-aliases/.
+	# wipe: reset --hard with savepoint.
+	wipe = "!f() { rev=$(git rev-parse ${1-HEAD}); \
+		git add -A && git commit --allow-empty -qm 'WIPE SAVEPOINT' \
+		&& git reset $rev --hard; }; f"
+
+	# Merge file contents from another branch.
+	# Source: http://stackoverflow.com/a/24544974/15690
+	mergetool-file = "!sh -c 'git show $1:$2 > $2.theirs \
+		&& git show $(git merge-base $1 $(git rev-parse HEAD)):$2 > $2.base \
+		&& bcompare $2.theirs $2 $2.base $2 && { rm -f $2.theirs; rm -f $2.base; }' -"
+[browser "open-in-running-browser"]
+	cmd = open-in-running-browser
+[web]
+	browser = open-in-running-browser
+
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = true
+[color "branch"]
+	current = green
+	# current = yellow reverse
+	local = normal
+	remote = blue
+[color "decorate"]
+	# bold green by default.
+	branch = green
+	# bold red by default.
+	remoteBranch = bold green
+	# default: bold yellow.
+	# tag = green
+	# default: bold magenta.
+	# stash = red
+	# default: bold cyan.
+	# HEAD = green bold
+	# default: bold blue.
+	# grafted =
+[color "diff"]
+	meta = yellow bold
+	commit = green bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "diff-highlight"]
+	# oldNormal = red bold
+	# oldHighlight = red bold 52
+	# newNormal = green bold
+	# newHighlight = green bold 22
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[core]
+	# See also GIT_EDITOR.
+	editor = vim
+	# use default..
+	# whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol,blank-at-eol
+
+	# -F: --quit-if-one-screen: Quit if entire file fits on first screen.
+	# -X: --no-init: Don't use termcap init/deinit strings.
+	# pager = less --no-init --quit-if-one-screen -+S
+	pager = less -S --no-init --quit-if-one-screen
+	# -+F/-+X to override LESS selectively?! (http://stackoverflow.com/a/18781512/15690)
+	# pager = less -+F -+X
+[diff]
+	tool = vimdiff
+	guitool = bc3
+	mnemonicprefix = true
+	compactionHeuristic = true
+[difftool "my-icdiff"]
+	cmd = icdiff --line-numbers --head 5000 "$LOCAL" "$REMOTE"
+[difftool "bc3"]
+	cmd = bcompare $LOCAL $REMOTE
+[difftool]
+	prompt = false
+[difftool "vimdiff"]
+	path = nvim
+
+[merge]
+	tool = vimdiff
+	# http://sjl.bitbucket.org/splice.vim/
+	# tool = splice
+	stat = true
+	ff = no
+	# Insert common ancestor in conflict hunks.
+	conflictstyle = diff3
+
+[mergetool "splice"]
+	cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
+	trustExitCode = true
+[mergetool "bc3"]
+	# Not required (anymore?)?!
+	# cmd = bcompare $LOCAL $REMOTE $BASE $MERGED
+	trustExitCode = true
+
+[merge "dpkg-mergechangelogs"]
+	name = debian/changelog merge driver
+	driver = dpkg-mergechangelogs -m %O %A %B %A
+# "git-meld":
+[treediff]
+	tool = bc3
+[treediff "bc3"]
+	cmd = bcompare
+
+[log]
+	abbrevCommit = true
+	decorate = short
+
+[pretty]
+	# reflog, with relative date (but for commits, not reflog entries!):
+	reflog = %C(auto)%h %<|(17)%gd %<|(31)%C(blue)%cr%C(reset) %gs (%s)
+
+[push]
+	# "simple" not available with Git 1.7.10 (Debian stable), "current" is similar.
+	default = simple
+
+[interactive]
+	# Requires perl-term-readkey (Arch) / libterm-readkey-perl (Debian).
+	singlekey = true
+
+[url "git@github.com:"]
+	insteadOf = github:
+[url "git://github.com/"]
+	insteadOf = gitpub:
+
+[github]
+	user = blueyed
+
+[diff "odf"]
+	binary = true
+	textconv = odt2txt
+
+[url "ssh://git@github.com/"]
+	pushInsteadOf = git://github.com/
+	pushInsteadOf = https://github.com/
+
+[diff-so-fancy]
+	# changeHunkIndicators = false
+	stripLeadingSymbols = false
+	markEmptyLines = false
+
+[pager]
+	dd = true
+	dsf = true
+	icdiff = true
+  status = true
+
+	diff = ~/.dotfiles/lib/diff-so-fancy/diff-so-fancy | $(git config core.pager)
+	log = ~/.dotfiles/lib/diff-so-fancy/diff-so-fancy | $(git config core.pager)
+	show = ~/.dotfiles/lib/diff-so-fancy/diff-so-fancy | $(git config core.pager)
+
+[sendemail]
+	confirm = always
+
+[rerere]
+	enabled = true
+
+[rebase]
+	autosquash = 1
+
+[grep]
+	patternType = perl
+	lineNumber = true
+
+# TODO: should be set for Tk/tcl globally probably?!
+[gui]
+	fontui = -family \"Liberation Sans\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+	fontdiff = -family \"Liberation Mono\" -size 8 -weight normal -slant roman -underline 0 -overstrike 0

@@ -1,0 +1,44 @@
+.DS_Store
+.svn
+*~
+.*.sw?
+tags
+# vim tags like tags-ja in dotfiles/vim/bundle/autocomplpop
+tags-??
+# LibreOffice lock files
+.~lock.*#
+
+.sass-cache
+
+# Python cache files.
+*.pyc
+__pycache__/
+
+# pytest-testmon
+.tmontmp/
+.testmondata
+
+.cache
+.coverage*/
+
+.tox/
+
+# IPython notebooks.
+*.ipynb
+
+# zsh-autoenv.
+.autoenv.zsh
+# vim-localvimrc.
+.lvimrc
+# Local pyenv versions.
+.python-version
+
+# Config for YouCompleteMe.
+.ycm_extra_conf.py
+
+# Custom stuff.
+ablage
+venv
+
+.agignore
+var/
