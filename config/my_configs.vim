@@ -87,6 +87,9 @@ Plugin 'tpope/vim-rails'                                            " For Facts,
 Plugin 'tpope/vim-unimpaired'                                       "lots of cool vim stuff
 Plugin 'tpope/vim-repeat'                                           "complement surround and other plugins such that they owrk as expected
 Plugin 'janko/vim-test'                                           "Test runner shortcuts
+Plugin 'editorconfig/editorconfig-vim'                              "set dev env as per .editorconfig if available
+Plugin 'neoclide/npm.nvim', {'do' : 'npm install'}                "npm support
+Plugin 'vim-syntastic/syntastic'                                    "Support for eslint
 
 packadd! matchit                                                    "enable matching of tags and codeblocks using %
 
@@ -126,18 +129,18 @@ let g:SimpylFold_docstring_preview=1
 
 "set python indentation and file format
 au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
     \ set fileformat=unix
 
 " set indentations for web dev
-au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2
-    \ set softtabstop=2
+au BufNewFile,BufRead *.js,*.html,*.css
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
     \ set shiftwidth=2
 
 " Mark extra whitespace as bad!!!

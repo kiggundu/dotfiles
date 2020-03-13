@@ -10,7 +10,17 @@
             "command": "lean",
             //"rootPatterns": ["busbt"],
             "filetypes": ["lean", "sbt"]
-        }    
+        },    
+
+        "flow": {
+          "command": "flow",
+          "args": ["lsp"],
+          "filetypes": ["javascript", "javascriptreact"],
+          "initializationOptions": {},
+          "requireRootPattern": true,
+          "settings": {},
+          "rootPatterns": [".flowconfig"]
+        }
         
     },
 
