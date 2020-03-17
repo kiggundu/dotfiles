@@ -58,3 +58,6 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="/home/god/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+#set up perl
+source ~/perl5/perlbrew/etc/bashrc
