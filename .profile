@@ -22,7 +22,52 @@ fi
 #Aliases
 alias bex="bundle exec"
 alias mapsvpn="sshuttle --dns -r vpn 10.20.0.0/13"
+alias pex="python -m"
+alias audiofy_file="festival --tts"
 
+# ------------------------------------
+# Docker alias and function
+# ------------------------------------
+alias sd="sudo docker"
+# Get latest container ID
+alias dl="sudo docker ps -l -q"
+# Get container process
+alias dps="sudo docker ps"
+# Get process included stop container
+alias dpa="sudo docker ps -a"
+# Get images
+alias di="sudo docker images"
+# Get container IP
+alias dip="sudo docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+# Run deamonized container, e.g., $dkd base /bin/echo hello
+alias drd="sudo docker run -d -P"
+# Run interactive container, e.g., $dki base /bin/bash
+alias dki="sudo docker run -i -t -P"
+# Execute interactive container, e.g., $dex base /bin/bash
+alias dex="sudo docker exec -i -t"
+# Stop all containers
+dstop() { sudo docker stop $(sudo docker ps -a -q); }
+# Remove all containers
+drm() { sudo docker rm $(sudo docker ps -a -q); }
+# Stop and Remove all containers
+alias drmf='sudo docker stop $(sudo docker ps -a -q) && sudo docker rm $(sudo docker ps -a -q)'
+# Remove all images
+dri() { sudo docker rmi $(sudo docker images -q); }
+# Remove all <none> images
+drin() { sudo docker rmi -f $(sudo docker images --filter "dangling=true" -q); }
+# Dockerfile build, e.g., $dbu tcnksm/test 
+dbu() { sudo docker build -t=$1 .; }
+# Show all alias related docker
+dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
+
+#Some keyboard shortcuts 
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "'/home/god/tools/speak_from_clipboard.sh'"
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "'<Primary><Shift><Alt>s'"
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name "'Speak text in the clipboard'"
+
+
+#Abe added intel c compileer and dev tools to ath
+export PATH="$PATH:/home/god/intel/sw_dev_tools/bin"
 
 export PATH="$PATH:/Android/platform-tools:/Android/tools:/Android/bin"
 export ANDROID_HOME="/Android"

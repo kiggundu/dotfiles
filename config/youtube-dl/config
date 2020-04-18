@@ -3,3 +3,4 @@
 --cookies cookies.txt 
 -o '%(uploader)s-%(title)s-%(id)s.%(ext)s' 
 --proxy socks5://127.0.0.1:9150
+--exec 'echo {}'
