@@ -91,6 +91,7 @@ Plugin 'janko/vim-test'                                           "Test runner s
 Plugin 'editorconfig/editorconfig-vim'                              "set dev env as per .editorconfig if available
 Plugin 'neoclide/npm.nvim', {'do' : 'npm install'}                "npm support
 Plugin 'vim-syntastic/syntastic'                                    "Support for eslint
+Plugin 'KurtPreston/vim-autoformat-rails'                                    "Support rails autoformatting
 
 packadd! matchit                                                    "enable matching of tags and codeblocks using %
 
