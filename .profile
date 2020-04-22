@@ -72,12 +72,13 @@ export PATH="$PATH:/home/god/intel/sw_dev_tools/bin"
 export PATH="$PATH:/Android/platform-tools:/Android/tools:/Android/bin"
 export ANDROID_HOME="/Android"
 
+#setup Kaldi
+export KALDI_ROOT="$HOME/workspace/automated-voice-recognition/kaldi/kaldi"
+export FSTROOT="$KALDI_ROOT/tools/openfst/"
+
 #ensure opam, pyenv paths are available
 eval `opam config env`
 
-#PyEnv stuff
-#export PYENV_ROOT="$HOME/.pyenv"
-#export PATH="$PYENV_ROOT/bin:$PATH" 
 export LC_ALL=en_US.UTF-8
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
