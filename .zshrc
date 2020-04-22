@@ -68,7 +68,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rails ruby docker bundler docker-compose git-extras github heroku)
+plugins=(git rails ruby docker bundler docker-compose git-extras github heroku nmap nvm osx pip pyenv python rake rsync rvm scala sbt supervisor thefuck postgres profiles redis-cli  transfer ubuntu ufw urltools vi-mode virtualenv wd web-search xcode z zsh-interactive-cd zsh-navigation-tools zsh_reloadi history-substring-search )
 #****Something below is messing up cli back search on mac.... sort it
 #plugins=(git rails ruby docker bundler docker-compose git-extras github heroku nmap nvm osx pip pyenv python rake rsync rvm scala sbt sudo supervisor thefuck postgres profiles redis-cli safe-paste transfer ubuntu ufw urltools vi-mode virtualenv wd web-search xcode z zsh-interactive-cd zsh-navigation-tools zsh_reloadi history-substring-search)
 
@@ -99,19 +99,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias bex="bundle exec"
-alias mapsvpn="sshuttle --dns -r vpn 10.20.0.0/13"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-#export PATH="$PATH:$HOME/.rvm/bin"
-export PATH="$(brew --prefix qt5)/bin:$PATH"
 
 #source user settings
 source ~/.profile
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 

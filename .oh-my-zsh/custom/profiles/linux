@@ -1,0 +1,2 @@
+#Place linux specific rc config here
+echo "Linux specific rc ran."
