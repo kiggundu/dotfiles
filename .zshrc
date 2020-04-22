@@ -68,7 +68,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rails ruby docker bundler docker-compose git-extras github heroku nmap nvm osx pip pyenv python rake rsync rvm scala sbt supervisor thefuck postgres profiles redis-cli  transfer ubuntu ufw urltools vi-mode virtualenv wd web-search xcode z zsh-interactive-cd zsh-navigation-tools zsh_reloadi history-substring-search )
+plugins=(git rails ruby docker bundler docker-compose git-extras github heroku nmap nvm osx pip pyenv python rake rsync rvm scala sbt supervisor thefuck postgres profiles redis-cli  transfer ubuntu ufw urltools vi-mode virtualenv wd web-search xcode z zsh-interactive-cd zsh-navigation-tools history-substring-search )
 #****Something below is messing up cli back search on mac.... sort it
 #plugins=(git rails ruby docker bundler docker-compose git-extras github heroku nmap nvm osx pip pyenv python rake rsync rvm scala sbt sudo supervisor thefuck postgres profiles redis-cli safe-paste transfer ubuntu ufw urltools vi-mode virtualenv wd web-search xcode z zsh-interactive-cd zsh-navigation-tools zsh_reloadi history-substring-search)
 
