@@ -1,2 +1,8 @@
 #Place linux specific rc config here
-echo "Linux specific rc ran."
+echo "Setting up Linux specific stuff."
+
+plugins+=( )                 #linux specific oh-my-zsh plugins
+
+eval "$(direnv hook zsh)"           #ensure direnv checks for .envrc and runs it when you cd"
+
+echo "Linux specific rc complete."

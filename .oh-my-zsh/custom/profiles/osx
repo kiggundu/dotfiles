@@ -1,4 +1,8 @@
 #Place osx specific rc config here
+echo "Setting up OSX  specific stuff."
+
+plugins+=( brew osx xcode )
+
 alias bex="bundle exec"
 alias mapsvpn="sshuttle --dns -r vpn 10.20.0.0/13"
 
@@ -12,3 +16,5 @@ export PATH="$(brew --prefix qt5)/bin:$PATH"
 
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+echo "OSX specific rc complete."
