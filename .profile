@@ -107,3 +107,6 @@ eval "$(pyenv virtualenv-init -)"
 
 #set up perl
 source ~/perl5/perlbrew/etc/bashrc
+
+#custom zsh bindings
+bindkey -v
