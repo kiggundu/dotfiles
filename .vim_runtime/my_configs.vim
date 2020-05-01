@@ -92,6 +92,7 @@ Plugin 'editorconfig/editorconfig-vim'                              "set dev env
 Plugin 'neoclide/npm.nvim', {'do' : 'npm install'}                "npm support
 Plugin 'vim-syntastic/syntastic'                                    "Support for eslint
 Plugin 'KurtPreston/vim-autoformat-rails'                                    "Support rails autoformatting
+Plugin 'aserebryakov/vim-todo-lists'                                "process *.todo files nicely to track 
 
 packadd! matchit                                                    "enable matching of tags and codeblocks using %
 
@@ -319,3 +320,19 @@ let vim_markdown_preview_github=1               "use githb look and feel provide
 :nnoremap <S-Tab> :bprevious<CR>:redraw<CR>:ls<CR>
 
 :set autowriteall                   "Save files when I switch buffers
+
+" CTRL-A CTRL-Q to select all and build quickfix list
+
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+  cc
+endfunction
+
+let g:fzf_action = {
+  \ 'ctrl-q': function('s:build_quickfix_list'),
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'

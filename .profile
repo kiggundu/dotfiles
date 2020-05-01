@@ -90,12 +90,6 @@ eval "$(rbenv init -)"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/god/.sdkman"
-[[ -s "/home/god/.sdkman/bin/sdkman-init.sh" ]] && source "/home/god/.sdkman/bin/sdkman-init.sh"
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -110,3 +104,25 @@ source ~/perl5/perlbrew/etc/bashrc
 
 #custom zsh bindings
 bindkey -v
+
+#qmake stuff
+export PATH="/usr/local/opt/qt/bin:$PATH"
+
+#Go configuration
+eval "$(goenv init -)"
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
+
+#Required after openssl install otherwise mysql build will not be able to find the libraries
+#failing with mysql2.bundle library not found
+export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
+
+#mvn stuff
+export M2_HOME=/$HOME/.mvn/apache-maven-3.6.3
+export PATH=$PATH:$M2_HOME/bin
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/god/.sdkman"
+[[ -s "/home/god/.sdkman/bin/sdkman-init.sh" ]] && source "/home/god/.sdkman/bin/sdkman-init.sh"
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
