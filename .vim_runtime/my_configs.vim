@@ -94,6 +94,13 @@ Plugin 'vim-syntastic/syntastic'                                    "Support for
 Plugin 'KurtPreston/vim-autoformat-rails'                                    "Support rails autoformatting
 Plugin 'aserebryakov/vim-todo-lists'                                "process *.todo files nicely to track 
 
+"C++ plugins
+Plugin 'git@github.com:WolfgangMehner/vim-support.git'          "Support vimscript dev in vim
+Plugin 'git@github.com:WolfgangMehner/c-support.git'          "Support vimscript dev in vim
+Plugin 'git@github.com:WolfgangMehner/bash-support.git'
+Plugin 'git@github.com:WolfgangMehner/awk-support.git'
+
+
 packadd! matchit                                                    "enable matching of tags and codeblocks using %
 
 " All of your Plugins must be added before the following line
@@ -151,7 +158,7 @@ au BufNewFile,BufRead *.js,*.json,*.html,*.css
     \ set shiftwidth=2
 
 " Mark extra whitespace as bad!!!
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.rb,*.js,*.json,*.sh,*.scala match SpellBad /\s\+$/
 
 set encoding=utf-8
 
