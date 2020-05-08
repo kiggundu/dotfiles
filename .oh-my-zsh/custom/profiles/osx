@@ -17,4 +17,10 @@ export PATH="$(brew --prefix qt5)/bin:$PATH"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+
+#Go configuration
+eval "$(goenv init -)"
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
+
 echo "OSX specific rc complete."

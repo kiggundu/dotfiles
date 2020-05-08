@@ -16,6 +16,11 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+# if running zsh
+if [ -n "$ZSH" ]; then
+    #install custom zsh key bindings
+    bindkey -v
+fi
 
 ## Abraham additions
 
@@ -102,16 +107,8 @@ eval "$(pyenv virtualenv-init -)"
 #set up perl
 source ~/perl5/perlbrew/etc/bashrc
 
-#custom zsh bindings
-bindkey -v
-
 #qmake stuff
 export PATH="/usr/local/opt/qt/bin:$PATH"
-
-#Go configuration
-eval "$(goenv init -)"
-export GOPATH="$HOME/go"
-export PATH="$GOPATH/bin:$PATH"
 
 #Required after openssl install otherwise mysql build will not be able to find the libraries
 #failing with mysql2.bundle library not found

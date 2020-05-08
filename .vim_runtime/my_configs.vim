@@ -128,7 +128,7 @@ set splitbelow
 set splitright
 
 " Enable folding with the spacebar
-nnoremap <space> za
+"nnoremap <space> za
 set foldmethod=indent
 set foldlevel=99
 set foldnestmax=10
@@ -343,3 +343,10 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 
 let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
+
+"Fix to ensure TMUX/byobu terminal syntax highlighting works when available
+if &term =~# '256color' && ( &term =~# '^screen'  || &term =~# '^tmux' )
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
+endif
