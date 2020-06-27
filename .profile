@@ -123,3 +123,10 @@ export SDKMAN_DIR="/home/god/.sdkman"
 [[ -s "/home/god/.sdkman/bin/sdkman-init.sh" ]] && source "/home/god/.sdkman/bin/sdkman-init.sh"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+
+#Go Configuration
+export GOPATH=$HOME/workspace/go/go
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+export GOROOT=$HOME/workspace/go/go
+export GOPATH=$HOME/workspace/go/work
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
