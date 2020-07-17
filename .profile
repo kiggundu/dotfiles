@@ -78,7 +78,7 @@ dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/cus
 export PATH="$PATH:$HOME/.local/kitty.app/bin/kitty"
 
 #Abe added intel c compileer and dev tools to ath
-export PATH="$PATH:/home/god/intel/sw_dev_tools/bin"
+export PATH="$PATH:$HOME/intel/sw_dev_tools/bin"
 
 export PATH="$PATH:/Android/platform-tools:/Android/tools:/Android/bin"
 export ANDROID_HOME="/Android"
@@ -106,7 +106,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 #setup pyenv
-export PATH="/home/god/.pyenv/bin:$PATH"
+export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
@@ -125,8 +125,8 @@ export M2_HOME=/$HOME/.mvn/apache-maven-3.6.3
 export PATH=$PATH:$M2_HOME/bin
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/god/.sdkman"
-[[ -s "/home/god/.sdkman/bin/sdkman-init.sh" ]] && source "/home/god/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 

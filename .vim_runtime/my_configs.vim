@@ -93,6 +93,7 @@ Plugin 'neoclide/npm.nvim', {'do' : 'npm install'}                "npm support
 Plugin 'vim-syntastic/syntastic'                                    "Support for eslint
 Plugin 'KurtPreston/vim-autoformat-rails'                                    "Support rails autoformatting
 Plugin 'aserebryakov/vim-todo-lists'                                "process *.todo files nicely to track 
+Plugin 'benmills/vimux'                                             "Provide vim tmux integration
 
 "C++ plugins
 Plugin 'git@github.com:WolfgangMehner/vim-support.git'          "Support vimscript dev in vim
