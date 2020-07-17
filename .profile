@@ -30,6 +30,9 @@ alias mapsvpn="sshuttle --dns -r vpn 10.20.0.0/13"
 alias pex="python -m"
 alias audiofy_file="festival --tts"
 
+#Some Kitty aliases.. all begin with kt_
+alias kt_icat="kitty +kitten icat"
+
 # ------------------------------------
 # Docker alias and function
 # ------------------------------------
@@ -70,6 +73,9 @@ dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/cus
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "'<Primary><Shift><Alt>s'"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name "'Speak text in the clipboard'"
 
+
+#Abe added kitty
+export PATH="$PATH:$HOME/.local/kitty.app/bin/kitty"
 
 #Abe added intel c compileer and dev tools to ath
 export PATH="$PATH:/home/god/intel/sw_dev_tools/bin"
