@@ -100,7 +100,10 @@ Plugin 'git@github.com:WolfgangMehner/vim-support.git'          "Support vimscri
 Plugin 'git@github.com:WolfgangMehner/c-support.git'          "Support vimscript dev in vim
 Plugin 'git@github.com:WolfgangMehner/bash-support.git'
 Plugin 'git@github.com:WolfgangMehner/awk-support.git'
-
+Plugin 'andreshazard/vim-logreview'
+Plugin 'git@github.com:tomtom/tinykeymap_vim.git'               "Introducing submodes/subcontexts within vim
+Plugin 'git@github.com:xolox/vim-misc.git'                      "vim-session depends on this
+Plugin 'git@github.com:xolox/vim-session.git'                   "Easier Vim session management
 
 packadd! matchit                                                    "enable matching of tags and codeblocks using %
 
