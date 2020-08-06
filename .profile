@@ -31,7 +31,8 @@ alias pex="python -m"
 alias audiofy_file="festival --tts"
 
 #Some Kitty aliases.. all begin with kt_
-alias kt_icat="kitty +kitten icat"
+alias kticat="kitty +kitten icat"
+alias ktd="kitty +kitten diff"
 
 # ------------------------------------
 # Docker alias and function
@@ -75,7 +76,7 @@ dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/cus
 
 
 #Abe added kitty
-export PATH="$PATH:$HOME/.local/kitty.app/bin/kitty"
+export PATH="$PATH:$HOME/.local/kitty.app/bin"
 
 #Abe added intel c compileer and dev tools to ath
 export PATH="$PATH:$HOME/intel/sw_dev_tools/bin"
