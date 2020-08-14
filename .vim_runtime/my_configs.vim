@@ -105,6 +105,8 @@ Plugin 'git@github.com:tomtom/tinykeymap_vim.git'               "Introducing sub
 Plugin 'git@github.com:xolox/vim-misc.git'                      "vim-session depends on this
 Plugin 'git@github.com:xolox/vim-session.git'                   "Easier Vim session management
 Plugin 'git@github.com:AndrewRadev/linediff.vim.git'                   "Easily diff line ranges
+Plugin 'Yilin-Yang/vim-markbar'                                 "A sidebar to jump between marks <leader>m
+Plugin 'git@github.com:jacquesbh/vim-showmarks.git'             "Show marks in the gutter
 
 packadd! matchit                                                    "enable matching of tags and codeblocks using %
 
