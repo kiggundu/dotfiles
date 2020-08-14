@@ -104,6 +104,7 @@ Plugin 'andreshazard/vim-logreview'
 Plugin 'git@github.com:tomtom/tinykeymap_vim.git'               "Introducing submodes/subcontexts within vim
 Plugin 'git@github.com:xolox/vim-misc.git'                      "vim-session depends on this
 Plugin 'git@github.com:xolox/vim-session.git'                   "Easier Vim session management
+Plugin 'git@github.com:AndrewRadev/linediff.vim.git'                   "Easily diff line ranges
 
 packadd! matchit                                                    "enable matching of tags and codeblocks using %
 
@@ -187,6 +188,9 @@ function! TabMessage(cmd)
   endif
 endfunction
 command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)
+
+"Allow a quick diff of the changed file with the one it was loaded from
+command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis | wincmd p | diffthis
 
 
 " redirect javascript formatting to  prettier node module
