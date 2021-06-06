@@ -40,7 +40,8 @@ Plugin 'tmhedberg/SimpylFold'
 
 Plugin 'vim-scripts/indentpython.vim'
 "Plugin 'Valloric/YouCompleteMe'
-Plugin 'https://github.com/kiggundu/darcula'
+Plugin 'kiggundu/darcula'
+
 
 "Plugin 'Syntastic'
 Plugin 'mileszs/ack.vim'
@@ -64,13 +65,18 @@ Plugin 'iamcco/markdown-preview.nvim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
+Plugin 'tpope/vim-surround'                                         " quickly edit surroundings (brackets, html tags, etc)
 Plugin 'tpope/vim-fugitive'                                         " git plugin
+Plugin 'tpope/vim-rails'                                            " For Facts, Ruby functions, and custom providers
+Plugin 'tpope/vim-unimpaired'                                       "lots of cool vim stuff
+Plugin 'tpope/vim-repeat'                                           "complement surround and other plugins such that they owrk as expected
+Plugin 'tpope/vim-dadbod'                                           "vim dadbod db connectivity
+Plugin 'kristijanhusak/vim-dadbod-ui'                               "complementary ui for dadbod
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fuzzy finder conf
 Plugin 'junegunn/fzf.vim'                                           " fuzzy finder
 Plugin 'scrooloose/nerdtree'                                        " folders tree
 Plugin 'scrooloose/nerdcommenter'                                   " code commenter
 Plugin 'kien/rainbow_parentheses.vim'                               " for nested parentheses
-Plugin 'tpope/vim-surround'                                         " quickly edit surroundings (brackets, html tags, etc)
 Plugin 'junegunn/vim-easy-align'                                    " alignment plugin
 Plugin 'neomake/neomake'                                            " run programs asynchronously and highlight errors
 Plugin 'Valloric/MatchTagAlways'                                    " highlights html enclosing tags
@@ -83,9 +89,6 @@ Plugin 'leanprover/lean.vim'                                        " Lean Theor
 Plugin 'mk12/vim-lean', { 'for': 'lean' }                           "amalgamate of official plugin above and some extras
 Plugin 'chrisbra/unicode.vim'                                       "Digraphs and the like to help with unicode 
 Plugin 'vim-ruby/vim-ruby'                                          " For Facts, Ruby functions, and custom providers
-Plugin 'tpope/vim-rails'                                            " For Facts, Ruby functions, and custom providers
-Plugin 'tpope/vim-unimpaired'                                       "lots of cool vim stuff
-Plugin 'tpope/vim-repeat'                                           "complement surround and other plugins such that they owrk as expected
 Plugin 'janko/vim-test'                                           "Test runner shortcuts
 Plugin 'editorconfig/editorconfig-vim'                              "set dev env as per .editorconfig if available
 Plugin 'neoclide/npm.nvim', {'do' : 'npm install'}                "npm support
@@ -152,6 +155,7 @@ set encoding=utf-8
 set timeout timeoutlen=1500
 set number
 "autocmd FileType coq colorscheme peachpuff
+let g:lightline = { 'colorscheme': 'darculaOriginal'  }
 colorscheme darcula
 
 "Allow sending ex commands to a new tab
