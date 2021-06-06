@@ -137,3 +137,7 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 export GOROOT=$HOME/workspace/go/go
 export GOPATH=$HOME/workspace/go/work
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH=$PATH:$HOME/.local/share/coursier/bin
+
+#Ensure vim is my default editor
+export EDITOR=vim
