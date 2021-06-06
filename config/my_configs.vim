@@ -153,6 +153,7 @@ set encoding=utf-8
 set timeout timeoutlen=1500
 set number
 "autocmd FileType coq colorscheme peachpuff
+let g:lightline = { 'colorscheme': 'darculaOriginal'  }
 colorscheme darcula
 
 "Allow sending ex commands to a new tab
