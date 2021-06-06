@@ -70,6 +70,7 @@ Plugin 'tpope/vim-fugitive'                                         " git plugin
 Plugin 'tpope/vim-rails'                                            " For Facts, Ruby functions, and custom providers
 Plugin 'tpope/vim-unimpaired'                                       "lots of cool vim stuff
 Plugin 'tpope/vim-repeat'                                           "complement surround and other plugins such that they owrk as expected
+Plugin 'tpope/vim-dadbod'                                           "complement surround and other plugins such that they owrk as expected
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fuzzy finder conf
 Plugin 'junegunn/fzf.vim'                                           " fuzzy finder
 Plugin 'scrooloose/nerdtree'                                        " folders tree
