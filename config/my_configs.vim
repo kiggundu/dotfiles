@@ -71,6 +71,8 @@ Plugin 'tpope/vim-rails'                                            " For Facts,
 Plugin 'tpope/vim-unimpaired'                                       "lots of cool vim stuff
 Plugin 'tpope/vim-repeat'                                           "complement surround and other plugins such that they owrk as expected
 Plugin 'tpope/vim-dadbod'                                           "vim dadbod db connectivity
+"Plugin 'tpope/vim-endwise'                                          "auto add block endings in ruby i.e. do .... end
+Plugin 'tpope/vim-obsession'                                        "auto manage vim sessions
 Plugin 'kristijanhusak/vim-dadbod-ui'                               "complementary ui for dadbod
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fuzzy finder conf
 Plugin 'junegunn/fzf.vim'                                           " fuzzy finder
