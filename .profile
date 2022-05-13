@@ -141,3 +141,7 @@ export PATH=$PATH:$HOME/.local/share/coursier/bin
 
 #Ensure vim is my default editor
 export EDITOR=vim
+
+#Github CLI autocomplete
+autoload -U compinit
+compinit -i

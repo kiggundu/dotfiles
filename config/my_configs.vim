@@ -91,10 +91,12 @@ Plugin 'leanprover/lean.vim'                                        " Lean Theor
 Plugin 'mk12/vim-lean', { 'for': 'lean' }                           "amalgamate of official plugin above and some extras
 Plugin 'chrisbra/unicode.vim'                                       "Digraphs and the like to help with unicode 
 Plugin 'vim-ruby/vim-ruby'                                          " For Facts, Ruby functions, and custom providers
-Plugin 'janko/vim-test'                                           "Test runner shortcuts
+"Plugin 'janko/vim-test'                                           "Test runner shortcuts
 Plugin 'editorconfig/editorconfig-vim'                              "set dev env as per .editorconfig if available
 Plugin 'neoclide/npm.nvim', {'do' : 'npm install'}                "npm support
 Plugin 'vim-syntastic/syntastic'                                    "Support for eslint
+Plugin 'vim-test/vim-test'                                                   "Support running ruby tests in vim 
+Plugin 'michaelb/vim-tips'                                          "Display tips in cmd section
 
 packadd! matchit                                                    "enable matching of tags and codeblocks using %
 
