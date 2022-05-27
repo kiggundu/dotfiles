@@ -5,7 +5,7 @@
 [credential]
 	helper = osxkeychain
 [core]
-	excludesfile = /home/god/.gitignore_global
+	excludesFile = ~/.gitignore
 [difftool "kdiff3"]
 	path = kdiff3
 	trustExitCode = false 

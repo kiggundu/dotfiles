@@ -295,6 +295,7 @@ let g:coc_global_extensions = ['coc-solargraph']                " Coc extensions
 nnoremap <Esc>[1;10B :t.<CR>                " duplicate the current line with <shift><alt><↑>
 nnoremap <Esc><Esc>[B :m .+1<CR>              " move the current line down <alt><↓>
 nnoremap <Esc><Esc>[A :m .-2<CR>              " move the current line up <alt><↑>
+let g:gitgutter_enabled = 1
 
 "Ruby dev stuff
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
