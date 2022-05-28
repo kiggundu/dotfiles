@@ -97,6 +97,7 @@ Plugin 'neoclide/npm.nvim', {'do' : 'npm install'}                "npm support
 Plugin 'vim-syntastic/syntastic'                                    "Support for eslint
 Plugin 'vim-test/vim-test'                                                   "Support running ruby tests in vim 
 Plugin 'michaelb/vim-tips'                                          "Display tips in cmd section
+Plugin 'voldikss/vim-floaterm'                                        "Vim floating terminal
 
 packadd! matchit                                                    "enable matching of tags and codeblocks using %
 
