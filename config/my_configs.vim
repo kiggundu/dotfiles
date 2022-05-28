@@ -297,6 +297,19 @@ nnoremap <Esc>[1;10B :t.<CR>                " duplicate the current line with <s
 nnoremap <Esc><Esc>[B :m .+1<CR>              " move the current line down <alt><↓>
 nnoremap <Esc><Esc>[A :m .-2<CR>              " move the current line up <alt><↑>
 let g:gitgutter_enabled = 1
+" Go to tab by number
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>h gT
+noremap <leader>l gt
+noremap <leader>0 :tablast<cr>
 
 "Ruby dev stuff
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
