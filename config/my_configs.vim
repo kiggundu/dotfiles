@@ -98,6 +98,7 @@ Plugin 'vim-syntastic/syntastic'                                    "Support for
 Plugin 'vim-test/vim-test'                                                   "Support running ruby tests in vim 
 Plugin 'michaelb/vim-tips'                                          "Display tips in cmd section
 Plugin 'voldikss/vim-floaterm'                                        "Vim floating terminal
+Plugin 'git@github.com:gcmt/taboo.vim.git'                                "Edit tab titles`
 
 packadd! matchit                                                    "enable matching of tags and codeblocks using %
 
@@ -310,6 +311,9 @@ noremap <leader>9 9gt
 noremap <leader>h gT
 noremap <leader>l gt
 noremap <leader>0 :tablast<cr>
+"taboo settings
+let g:taboo_unnamed_tab_label =" [New] "
+let g:taboo_tab_format ="| %N %f%m "
 
 "Ruby dev stuff
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
