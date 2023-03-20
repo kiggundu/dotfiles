@@ -23,6 +23,7 @@ if [ -n "$ZSH" ]; then
 fi
 
 ## Abraham additions
+alias tnix="sudo -u debian-tor nyx"
 
 #Aliases
 alias bex="bundle exec"
@@ -57,7 +58,6 @@ alias dex="sudo docker exec -i -t"
 # Stop all containers
 dstop() { sudo docker stop $(sudo docker ps -a -q); }
 # Remove all containers
-drm() { sudo docker rm $(sudo docker ps -a -q); }
 # Stop and Remove all containers
 alias drmf='sudo docker stop $(sudo docker ps -a -q) && sudo docker rm $(sudo docker ps -a -q)'
 # Remove all images
@@ -106,13 +106,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-#setup pyenv
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
 #set up perl
-source ~/perl5/perlbrew/etc/bashrc
+#source ~/perl5/perlbrew/etc/bashrc
 
 #qmake stuff
 export PATH="/usr/local/opt/qt/bin:$PATH"
@@ -145,3 +140,10 @@ export EDITOR=vim
 #Github CLI autocomplete
 autoload -U compinit
 compinit -i
+
+#Abe additions
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
+
