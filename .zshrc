@@ -68,7 +68,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(autojump git rails ruby docker bundler cargo common-aliases dnote docker-compose git-extras github emoji encode64 gem httpie heroku mvn nmap nvm pip pyenv python rake rsync rvm scala sbt supervisor thefuck postgres profiles redis-cli  systemd transfer ubuntu ufw urltools vi-mode virtualenv web-search yarn npm z zsh-interactive-cd zsh-navigation-tools history-substring-search )
+plugins=( autojump bundler common-aliases dnote docker docker-compose emoji encode64 gem git git-extras github heroku history-substring-search httpie mvn nmap npm nvm pip postgres profiles pyenv python rails rake redis-cli rsync ruby rust rvm sbt scala supervisor systemd thefuck transfer ubuntu ufw urltools vi-mode virtualenv web-search yarn z zsh-interactive-cd zsh-navigation-tools )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -104,3 +104,16 @@ source ~/.profile
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# opam configuration
+[[ ! -r /home/god/.opam/opam-init/init.zsh ]] || source /home/god/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
