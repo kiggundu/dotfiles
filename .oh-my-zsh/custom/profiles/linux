@@ -6,3 +6,4 @@ plugins+=( )                 #linux specific oh-my-zsh plugins
 eval "$(direnv hook zsh)"           #ensure direnv checks for .envrc and runs it when you cd"
 
 echo "Linux specific rc complete."
+export BYOBU_PREFIX=/usr
