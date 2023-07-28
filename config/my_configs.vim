@@ -31,7 +31,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Install the search meister
 " Plugin 'wincent/command-t'
 
-Plugin 'git://github.com/let-def/vimbufsync.git'
+Plugin 'let-def/vimbufsync'
 Plugin 'whonore/coqtail'
 "Plugin 'git://github.com/the-lambda-church/coquille.git'
 "Plugin 'the-lambda-church/coquille.git'
